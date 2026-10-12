@@ -18,7 +18,7 @@
 - Gazebo 
 - Turtlebot3（waffle）
 ### 运行成功动图
-![运行成功动图]（"https://github.com/user-attachments/assets/71f535c1-828f-45bb-85b2-bde929db2038" /）
+![运行成功动图](https://github.com/user-attachments/assets/71f535c1-828f-45bb-85b2-bde929db2038)
 
 ## 项目结构
 
