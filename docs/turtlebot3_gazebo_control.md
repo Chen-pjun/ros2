@@ -125,8 +125,7 @@ if __name__ == "__main__":
    ```bash
    roslaunch turtlebot3_gazebo_keyboard_control gazebo_simulation.launch
    ```
-   注：Gazebo需要强大的3D渲染功能，但虚拟机显卡资源太弱或者没开3D加速，就会导致它崩溃。如图所示：
-![alt text](<屏幕截图 2026-10-11 203111.png>)
+   注：Gazebo需要强大的3D渲染功能，但虚拟机显卡资源太弱或者没开3D加速，就会导致它崩溃。
 解决办法：
 在终端里按 Ctrl + C 终止当前的卡死状态。如果没反应，就重新开一个终端（Ctrl + Alt + T），输入：
    ```bash
