@@ -5,7 +5,7 @@
 ### 1.1 实验目的
 1. 掌握在 Gazebo 物理仿真环境中加载机器人模型的方法。通过编写 `launch` 文件调用 Gazebo 并生成 Turtlebot3 机器人实体。
 2. 掌握 ROS 话题通信机制。节点作为发布者发布 `/cmd_vel` 话题，发送 `geometry_msgs/Twist` 消息控制机器人移动。
-3. 学会编写键盘控制节点，将按键映射为线速度和角速度，实现在物理仿真环境下的闭环控制与移动。
+3. 学会编写键盘控制节点，将按键映射为线速度和角速度，实现在物理仿真环境下的开环速度控制与移动。
 
 ### 1.2 实验环境
 | 配置项 | 版本/说明 |
@@ -95,7 +95,7 @@ moveBindings = {
 }
 
 if __name__ == "__main__":
-    rospy.init_node('turtlebot3_keyboard_control')
+    rospy.init_node('turtlebot3_control')
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     speed, turn = 0.2, 1.0
     
@@ -123,7 +123,7 @@ if __name__ == "__main__":
    ```
 2. 启动 Gazebo 仿真环境（如果在虚拟机中遇到闪退，需提前执行 export LIBGL_ALWAYS_SOFTWARE=1）：
    ```bash
-   roslaunch turtlebot3_gazebo_keyboard_control gazebo_simulation.launch
+   roslaunch turtlebot3_gazebo_control gazebo_simulation.launch
    ```
    注：Gazebo需要强大的3D渲染功能，但虚拟机显卡资源太弱或者没开3D加速，就会导致它崩溃。
 解决办法：
@@ -135,18 +135,16 @@ if __name__ == "__main__":
 
 1. 另开一个终端，运行键盘控制节点：
    ```bash
-   rosrun turtlebot3_gazebo_keyboard_control main.py
+   rosrun turtlebot3_gazebo_control main.py
    ```
 2. 将光标聚焦在终端窗口，按下 W、A、S、D 即可控制小车运动。
 
 
 ## 四、运行效果展示
-
-![alt text](动画.gif)
+![演示动图](../img/demo.gif)
 注:开始会有点延迟很正常，但不要疯狂连按，不然小车会直接冲出去甚至穿模翻车。
 
 ## 五、实验总结
-
 
 
 本次实验成功在 Gazebo 仿真环境中加载了 Turtlebot3 机器人，并编写了 Python 键盘控制节点。通过发布 /cmd_vel 话题实现了对机器人的实时运动控制，验证了物理引擎和机器人运动学模型的有效性，达到了预期的实验目的。
