@@ -19,12 +19,14 @@
 **功能包目录结构如下：**
 ```text
 turtlebot3_gazebo_control/
-├── package.xml                  # 包清单
-├── CMakeLists.txt               # 构建文件
 ├── launch/
-│   └── gazebo_simulation.launch # Gazebo 启动文件
-└── scripts/
-    └── main.py                  # 键盘控制 Python 脚本
+│   ├── gazebo_simulation.launch  # 启动 Gazebo 空世界并加载机器人模型
+│   └── main.launch               # 统一入口，启动仿真和键盘交互终端
+├── scripts/
+│   └── main.py                   # 键盘控制 Python 脚本
+├── package.xml                   # ROS 包清单
+├── CMakeLists.txt                # 构建文件
+└── README.md                     # 运行说明文档
 ```
 ##   二、实验原理
 
