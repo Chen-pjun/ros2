@@ -24,8 +24,16 @@ src/quadruped_mujoco_rl/
 ├── scripts/
 │   ├── main_train.py            # 训练脚本（入口）
 │   └── main_test.py             # 测试与渲染脚本
-├── models/
-│   └── quadruped.xml            # 四足机器人 MJCF 模型文件
+├── models/        
+|   ├─ a1.xml
+│   ├─ quadruped.xml             # 四足机器人 MJCF 模型文件
+│   └─ assets/
+│   ├─ calf.obj
+│   ├─ hip.obj
+│   ├─ thigh.obj
+│   ├─ thigh_mirror.obj
+│   ├─ trunk.obj
+│   └─ trunk_A1.png
 ├── package.xml                  # ROS 包清单
 ├── CMakeLists.txt               # 编译文件
 └── README.md                    # 运行说明
